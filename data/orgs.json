@@ -1,0 +1,106 @@
+[
+  {
+    "id": "addams",
+    "name": "AdDaMS",
+    "slug": "addams",
+    "description": "Ateneo de Davao Mathematics Society Merch",
+    "logo": "/images/orgs/addams.jpg",
+    "location": {
+      "placeName": "Martin Hall",
+      "address": "Jacinto Campus, Roxas Ave, Davao City"
+    },
+    "socials": {
+      "facebook": "https://www.facebook.com/addamsmath"
+    }
+  },
+
+  {
+    "id": "cssec",
+    "name": "CSSEC",
+    "slug": "cssec",
+    "description": "Computer Studies Student Executive Council - ADDU CS Merch",
+    "logo": "/images/orgs/cssec.jpg",
+    "location": {
+      "placeName": "Finster 6th Floor",
+      "address": "Jacinto Campus, Roxas Ave, Davao City"
+    },
+    "socials": {
+      "facebook": "https://www.facebook.com/addu.cs"
+    }
+  },
+
+  {
+    "id": "jswap",
+    "name": "JSWAP",
+    "slug": "jswap",
+    "description": "JSWAP Ateneo de Davao Merch",
+    "logo": "/images/orgs/jswap.jpg",
+    "location": {
+      "placeName": "Martin Hall",
+      "address": "Jacinto Campus, Roxas Ave, Davao City"
+    },
+    "socials": {
+      "facebook": "https://www.facebook.com/addujswap"
+    }
+  },
+
+  {
+    "id": "coa",
+    "name": "COA-D",
+    "slug": "coa",
+    "description": "Council of Organizations of the Ateneo - Davao Merch",
+    "logo": "/images/orgs/coa.jpg",
+    "location": {
+      "placeName": "Martin Hall",
+      "address": "Jacinto Campus, Roxas Ave, Davao City"
+    },
+    "socials": {
+      "facebook": "https://www.facebook.com/addujswap"
+    }
+  },
+
+  {
+    "id": "jpia",
+    "name": "JPIA",
+    "slug": "jpia",
+    "description": "Junior Philippine Institute of Accountants JPIA - ADDU Chapter Merch",
+    "logo": "/images/orgs/jpia.jpg",
+    "location": {
+      "placeName": "Martin Hall",
+      "address": "Jacinto Campus, Roxas Ave, Davao City"
+    },
+    "socials": {
+      "facebook": "https://www.facebook.com/JPIAdDU"
+    }
+  },
+
+  {
+    "id": "ssc",
+    "name": "SSC",
+    "slug": "ssc",
+    "description": "Supreme Student Council - Ateneo de Davao University College of Law Merch",
+    "logo": "/images/orgs/ssc.jpg",
+    "location": {
+      "placeName": "Martin Hall",
+      "address": "Jacinto Campus, Roxas Ave, Davao City"
+    },
+    "socials": {
+      "facebook": "https://www.facebook.com/sscaddulaw"
+    }
+  },
+
+  {
+    "id": "jpice",
+    "name": "JPICE",
+    "slug": "jpice",
+    "description": "The Junior Philippine Institute of Civil Engineers of Ateneo de Davao University Merch",
+    "logo": "/images/orgs/jpice.jpg",
+    "location": {
+      "placeName": "Martin Hall",
+      "address": "Jacinto Campus, Roxas Ave, Davao City"
+    },
+    "socials": {
+      "facebook": "https://www.facebook.com/addujpice"
+    }
+  }
+]
