@@ -1,0 +1,56 @@
+[
+  {
+    "id": "upbit-shirt-2025",
+    "orgId": "cssec",
+    "name": "UPBit T-Shirt",
+    "slug": "upbit-shirt-2025",
+    "description": "UP Bit T-Shirt",
+    "price": 350,
+    "images": [
+      "/images/products/upbit-shirt-1.jpg",
+      "/images/products/upbit-shirt-2.jpg"
+    ],
+    "stockStatus": "in-stock",
+    "featured": false,
+    "tags": ["upbit", "t-shirt"]
+  },
+
+  {
+    "id": "sample-feature-1",
+    "orgId": "cssec",
+    "name": "Sample Feature 1",
+    "slug": "sample-feature-1",
+    "description": "Sample Feature",
+    "price": 350,
+    "images": ["/images/products/sample-feature-1.avif"],
+    "stockStatus": "in-stock",
+    "featured": true,
+    "tags": ["upbit", "t-shirt"]
+  },
+
+  {
+    "id": "sample-feature-2",
+    "orgId": "cssec",
+    "name": "Sample Feature 2",
+    "slug": "sample-feature-2",
+    "description": "Sample Feature",
+    "price": 350,
+    "images": ["/images/products/sample-feature-2.jpg"],
+    "stockStatus": "in-stock",
+    "featured": true,
+    "tags": ["upbit", "t-shirt"]
+  },
+
+  {
+    "id": "sample-feature-3",
+    "orgId": "cssec",
+    "name": "Sample Feature 3",
+    "slug": "sample-feature-3",
+    "description": "Sample Feature",
+    "price": 350,
+    "images": ["/images/products/sample-feature-3.avif"],
+    "stockStatus": "in-stock",
+    "featured": true,
+    "tags": ["upbit", "t-shirt"]
+  }
+]
