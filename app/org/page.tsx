@@ -1,8 +1,9 @@
 import Link from "next/link";
-import orgs from "../../data/orgs.json";
+import { getOrgs } from "@/lib/getOrgs";
 import Image from "next/image";
 
-export default function Orgs() {
+export default async function Orgs() {
+  const orgs = await getOrgs();
   return (
     <main className="px-6 py-10 mt-20">
       <h2 className="text-2xl font-semibold text-center mb-8">

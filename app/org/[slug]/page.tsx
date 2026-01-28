@@ -1,6 +1,6 @@
-import products from "../../../data/products.json";
-import orgs from "../../../data/orgs.json";
-import NotFound from "@/app/not-found";
+import { getProducts } from "@/lib/getProducts";
+import { getOrgs } from "@/lib/getOrgs";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -22,10 +22,12 @@ export default async function Org({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const orgId = (await params).slug;
+  const { slug: orgId } = await params;
+
+  const [orgs, products] = await Promise.all([getOrgs(), getProducts()]);
 
   const org = orgs.find((_org) => _org.id == orgId);
-  if (!org) return NotFound();
+  if (!org) notFound();
 
   // Featured Products
   const featuredProds = products.filter(
@@ -36,6 +38,16 @@ export default async function Org({
   const otherProds = products.filter(
     (product) => product.orgId == orgId && !product.featured,
   );
+
+  // If No Products Available
+  if (featuredProds.length == 0 && otherProds.length == 0) {
+    return (
+      <main>
+        <h2 className="mt-50">No Merch Available</h2>
+      </main>
+    );
+  }
+
   return (
     <main>
       {/* Shows Featured Products First */}
