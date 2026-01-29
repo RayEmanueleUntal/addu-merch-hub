@@ -1,21 +1,7 @@
 import { getProducts } from "@/lib/getProducts";
 import { getOrgs } from "@/lib/getOrgs";
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
-
-interface Product {
-  id: string;
-  orgId: string;
-  name: string;
-  slug: string;
-  description: string;
-  price: number;
-  images: string[];
-  stockStatus: string;
-  featured: boolean;
-  tags: string[];
-}
+import ProductGrid from "@/components/product/ProductGrid";
 
 export default async function Org({
   params,
@@ -50,37 +36,7 @@ export default async function Org({
 
   return (
     <main>
-      {/* Shows Featured Products First */}
-      {featuredProds.map(renderProduct)}
-
-      {/* Shows Other Products */}
-      {otherProds.map(renderProduct)}
+      <ProductGrid products={[...featuredProds, ...otherProds]}></ProductGrid>
     </main>
-  );
-}
-
-function renderProduct(product: Product) {
-  return (
-    <Link href={`/product/${product.slug}`} key={product.id} className="">
-      {/* Image container */}
-      <div className="relative w-32 h-32 rounded-xl bg-white shadow-md overflow-hidden transition hover:scale-105 hover:shadow-lg">
-        <Image
-          src={product.images[0]}
-          alt={product.name ?? ""}
-          fill
-          className="object-cover"
-        ></Image>
-      </div>
-
-      {/* Product Name */}
-      <div className="">
-        <h3>{product.name}</h3>
-      </div>
-
-      {/* Product Price */}
-      <div className="">
-        <h4>{product.price}</h4>
-      </div>
-    </Link>
   );
 }

@@ -1,11 +1,15 @@
 import { searchProducts } from "@/lib/search";
 
-export default function SearchPage({
+export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: { q?: string };
+  searchParams: Promise<{ q?: string }>;
 }) {
-  const query = searchParams.q ?? "";
-  const results = query ? searchProducts(query) : [];
+  const { q } = await searchParams;
+  const query = q ?? "";
+
+  const results = query ? await searchProducts(query) : [];
+  console.log(results);
+
   return <main className="mt-40">Hello</main>;
 }
