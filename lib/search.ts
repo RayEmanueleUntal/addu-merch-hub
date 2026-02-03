@@ -1,3 +1,5 @@
+"use server";
+
 import { getProducts } from "@/lib/getProducts";
 
 export async function searchProducts(query: string) {
