@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { searchProducts } from "@/lib/search";
 import { Product } from "@/types/product";
 import { Search } from "lucide-react";
@@ -46,6 +46,7 @@ export default function SearchBar({ isOpen, onToggle }: SearchBoxProps) {
     e.preventDefault();
     if (!query.trim()) return;
 
+    onToggle();
     router.push(`/search?q=${encodeURIComponent(query)}`);
   }
 
@@ -68,7 +69,10 @@ export default function SearchBar({ isOpen, onToggle }: SearchBoxProps) {
         {results && (
           <ul className="mt-2 pt-2">
             {results.map((product) => (
-              <li key={product.id} className="py-1">
+              <li
+                key={product.id}
+                className="py-1 hover:bg-gray-500/10 cursor-pointer"
+              >
                 <Link
                   href={`/product/${product.slug}`}
                   key={product.id}

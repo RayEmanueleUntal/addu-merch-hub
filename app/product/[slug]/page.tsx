@@ -19,9 +19,9 @@ export default async function Product({
   const org = orgs.find((_org) => _org.id == product.orgId);
 
   return (
-    <main className="mt-50">
+    <main className="min-h-screen bg-white">
       {/* Org Logo */}
-      {org?.logo && (
+      {/* {org?.logo && (
         <Link
           href={`/org/${org.slug}`}
           key={org.id}
@@ -34,7 +34,9 @@ export default async function Product({
             className="object-cover"
           />
         </Link>
-      )}
+      )} */}
+
+      <section className="pt-32 py-12"></section>
 
       {/* Image Carousel */}
       <Carousel images={product.images}></Carousel>

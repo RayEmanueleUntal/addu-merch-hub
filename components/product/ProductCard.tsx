@@ -30,7 +30,7 @@ export default function ProductCard({ product }: { product: Product }) {
         )}
         {/* Overlay div if product is not in-stock */}
         {product.stockStatus === "out-of-stock" && (
-          <div className="absolute inset-0 bg-black opacity-40"></div>
+          <div className="absolute inset-0 bg-white opacity-40"></div>
         )}
       </div>
 
