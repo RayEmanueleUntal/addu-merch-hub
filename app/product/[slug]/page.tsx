@@ -86,7 +86,7 @@ export default async function Product({
               <h4 className="text-sm font-bold uppercase text-gray-400 mb-3 flex items-center gap-2">
                 <Info size={16} /> Description
               </h4>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed whitespace-pre-line">
                 {product.description}
               </p>
             </div>

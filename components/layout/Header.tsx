@@ -44,7 +44,7 @@ export default function Header() {
               <Link href="/" className="text-xl font-bold text-[#08228d]">
                 {/* ADDU MERCH HUB */}
                 <Image
-                  src={"/images/assets/logov1.svg"}
+                  src={"/images/assets/logov2.svg"}
                   alt="Logo"
                   width={90}
                   height={90}
@@ -53,7 +53,7 @@ export default function Header() {
 
               <Link
                 href="/org"
-                className="text-gray-700 hover:text-gray-900 font-bold"
+                className="text-gray-700 hover:text-[#08228d] font-medium"
               >
                 ORGANIZATIONS
               </Link>
@@ -68,7 +68,7 @@ export default function Header() {
 
               <Link
                 href="/about"
-                className="text-gray-700 hover:text-gray-900 font-semibold"
+                className="text-gray-700 hover:text-[#08228d] font-medium"
               >
                 About
               </Link>

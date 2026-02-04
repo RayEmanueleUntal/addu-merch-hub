@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Poppins, Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const outfit = Outfit({
+  weight: ["400", "700", "500"],
+  variable: "--font-poppins",
   subsets: ["latin"],
 });
 
@@ -31,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>
+      <body className={`${outfit.className} antialiased`}>
         <Header></Header>
         {children}
       </body>
