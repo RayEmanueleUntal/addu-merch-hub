@@ -33,7 +33,7 @@ export default function Header() {
         bg-white/30 backdrop-blur-md
         border-b border-gray-200/50
         transition-[height] duration-500 ease-in-out
-        ${isSearchOpen ? "h-32" : "h-16"}
+        ${isSearchOpen ? "h-auto" : "h-16"}
       `}
       >
         <div className="relative mx-auto w-300 px-30 py-3">
@@ -78,8 +78,8 @@ export default function Header() {
           {/* SEARCH AREA */}
           <div
             className={`
-            overflow-hidden transition-all duration-500 ease-in-out
-            ${isSearchOpen ? "max-h-20 opacity-100 mt-4" : "max-h-0 opacity-0"}
+               transition-all duration-500 ease-in-out
+            ${isSearchOpen ? " max-h-200 opacity-100 mt-4" : "max-h-0 opacity-0"}
           `}
           >
             <SearchBox
