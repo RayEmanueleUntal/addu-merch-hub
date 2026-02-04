@@ -4,9 +4,11 @@ import ProductCard from "./ProductCard";
 export default function ProductGrid({ products }: { products: Product[] }) {
   return (
     <main>
-      {products.map((product) => (
-        <ProductCard product={product} key={product.id}></ProductCard>
-      ))}
+      <div className="relative w-300 mx-auto mt-20 px-30 grid grid-cols-3">
+        {products.map((product) => (
+          <ProductCard product={product} key={product.id}></ProductCard>
+        ))}
+      </div>
     </main>
   );
 }

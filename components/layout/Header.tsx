@@ -29,7 +29,7 @@ export default function Header() {
       {/* HEADER */}
       <header
         className={`
-        fixed top-0 left-0 z-50 w-full
+        fixed top-0 left-0 z-50 w-full 
         bg-white/30 backdrop-blur-md
         border-b border-gray-200/50
         transition-[height] duration-500 ease-in-out

@@ -36,7 +36,7 @@
     "description": "Sample Feature",
     "price": 350,
     "images": ["/images/products/sample-feature-2.jpg"],
-    "stockStatus": "in-stock",
+    "stockStatus": "out-of-stock",
     "featured": true,
     "tags": ["upbit", "t-shirt"]
   },
@@ -52,5 +52,31 @@
     "stockStatus": "in-stock",
     "featured": true,
     "tags": ["upbit", "t-shirt"]
+  },
+
+  {
+    "id": "coad-1",
+    "orgId": "coa",
+    "name": "Ateneo Sweater",
+    "slug": "coad-1",
+    "description": "Ateneo Sweater",
+    "price": 1500,
+    "images": ["/images/products/coad1.webp"],
+    "stockStatus": "in-stock",
+    "featured": true,
+    "tags": ["coad", "sweater", "ateneo"]
+  },
+
+  {
+    "id": "coad-2",
+    "orgId": "coa",
+    "name": "Ateneo Jersey",
+    "slug": "coad-2",
+    "description": "Ateneo Jersey",
+    "price": 1500,
+    "images": ["/images/products/coad2.webp"],
+    "stockStatus": "in-stock",
+    "featured": true,
+    "tags": ["coad", "jersey", "ateneo"]
   }
 ]

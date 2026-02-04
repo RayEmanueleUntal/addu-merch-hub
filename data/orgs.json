@@ -1,5 +1,20 @@
 [
   {
+    "id": "coa",
+    "name": "COA-D",
+    "slug": "coa",
+    "description": "Council of Organizations of the Ateneo - Davao Merch",
+    "logo": "/images/orgs/coa.jpg",
+    "location": {
+      "placeName": "Martin Hall",
+      "address": "Jacinto Campus, Roxas Ave, Davao City"
+    },
+    "socials": {
+      "facebook": "https://www.facebook.com/addujswap"
+    }
+  },
+
+  {
     "id": "addams",
     "name": "AdDaMS",
     "slug": "addams",
@@ -35,21 +50,6 @@
     "slug": "jswap",
     "description": "JSWAP Ateneo de Davao Merch",
     "logo": "/images/orgs/jswap.jpg",
-    "location": {
-      "placeName": "Martin Hall",
-      "address": "Jacinto Campus, Roxas Ave, Davao City"
-    },
-    "socials": {
-      "facebook": "https://www.facebook.com/addujswap"
-    }
-  },
-
-  {
-    "id": "coa",
-    "name": "COA-D",
-    "slug": "coa",
-    "description": "Council of Organizations of the Ateneo - Davao Merch",
-    "logo": "/images/orgs/coa.jpg",
     "location": {
       "placeName": "Martin Hall",
       "address": "Jacinto Campus, Roxas Ave, Davao City"

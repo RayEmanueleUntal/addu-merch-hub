@@ -1,4 +1,5 @@
 import { searchProducts } from "@/lib/search";
+import ProductGrid from "@/components/product/ProductGrid";
 
 export default async function SearchPage({
   searchParams,
@@ -11,5 +12,9 @@ export default async function SearchPage({
   const results = query ? await searchProducts(query) : [];
   console.log(results);
 
-  return <main className="mt-40">Hello</main>;
+  return (
+    <main className="mt-40">
+      <ProductGrid products={results}></ProductGrid>
+    </main>
+  );
 }
