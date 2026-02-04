@@ -70,7 +70,7 @@ export default function Carousel({ images }: { images: string[] }) {
             <button
               key={index}
               onClick={() => setCurrent(index)}
-              className={`relative shrink-0 w-20 h-20 rounded-xl overflow-hidden border-2 transition-all ${
+              className={`relative shrink-0 w-20 h-20 rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${
                 current === index
                   ? "border-[#08228d] ring-2 ring-[#08228d]/10"
                   : "border-transparent opacity-60 hover:opacity-100"
