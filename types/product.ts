@@ -4,6 +4,8 @@ export interface Product {
   name: string;
   slug: string;
   description: string;
+  collection: string;
+  focalPoint: string;
   price: number;
   images: string[];
   stockStatus: string;
