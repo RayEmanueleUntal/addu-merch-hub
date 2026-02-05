@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Carousel from "@/components/ui/Carousel";
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Store, Package, Info } from "lucide-react"; // Nice icons for detail sections
+import { MapPin, Info } from "lucide-react"; // Nice icons for detail sections
 
 export default async function Product({
   params,

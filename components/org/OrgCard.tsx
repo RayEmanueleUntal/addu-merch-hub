@@ -25,9 +25,6 @@ export default function OrgCard({ org, index }: { org: Org; index: number }) {
               src={org.logo}
               alt={org.name ?? ""}
               fill
-              /* Using object-contain here because org logos usually 
-                 shouldn't be cropped by object-cover 
-              */
               className="object-contain group-hover:scale-110 transition-transform duration-500"
             />
           </div>
