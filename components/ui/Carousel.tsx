@@ -6,11 +6,13 @@ import { ChevronRight, ChevronLeft } from "lucide-react";
 export default function Carousel({ images }: { images: string[] }) {
   const [current, setCurrent] = useState(0);
 
-  const prev = () => {
+  const prev = (e: React.MouseEvent) => {
+    e.preventDefault();
     setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
-  const next = () => {
+  const next = (e: React.MouseEvent) => {
+    e.preventDefault();
     setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
@@ -19,14 +21,13 @@ export default function Carousel({ images }: { images: string[] }) {
   return (
     <div className="flex flex-col gap-4">
       {/* MAIN IMAGE STAGE */}
-      <div className="relative aspect-square w-full overflow-hidden rounded-3xl bg-gray-50 border border-gray-100">
+      <div className="relative aspect-[4/5] md:aspect-square w-full overflow-hidden rounded-[2rem] bg-gray-50 border border-gray-100 shadow-inner">
         <Image
           src={images[current]}
           alt={`Product image ${current + 1}`}
           fill
           priority
-          className="object-cover transition-all duration-500 ease-in-out"
-          // sizes="(max-width: 768px) 100vw, 600px"
+          className="object-cover transition-all duration-700 ease-in-out"
         />
 
         {/* Floating Controls (Only if multiple images) */}
@@ -34,17 +35,17 @@ export default function Carousel({ images }: { images: string[] }) {
           <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none">
             <button
               onClick={prev}
-              className="group pointer-events-auto p-3 rounded-full bg-white/80 backdrop-blur-md text-gray-800 shadow-sm border border-gray-200 hover:bg-white transition-all active:scale-90"
+              className="group pointer-events-auto p-2.5 md:p-3 rounded-full bg-white/90 backdrop-blur-md text-gray-800 shadow-xl border border-gray-100 hover:bg-white transition-all active:scale-90"
               aria-label="Previous image"
             >
               <ChevronLeft
                 size={20}
-                className="group-hover:-translate-x-0.5 transition-transform cursor-pointer"
+                className="group-hover:-translate-x-0.5 transition-transform"
               />
             </button>
             <button
               onClick={next}
-              className="group pointer-events-auto p-3 rounded-full bg-white/80 backdrop-blur-md text-gray-800 shadow-sm border border-gray-200 hover:bg-white transition-all active:scale-90 cursor-pointer"
+              className="group pointer-events-auto p-2.5 md:p-3 rounded-full bg-white/90 backdrop-blur-md text-gray-800 shadow-xl border border-gray-100 hover:bg-white transition-all active:scale-90"
               aria-label="Next image"
             >
               <ChevronRight
@@ -57,7 +58,7 @@ export default function Carousel({ images }: { images: string[] }) {
 
         {/* Simple Page Counter */}
         {images.length > 1 && (
-          <div className="absolute bottom-4 right-4 bg-black/10 backdrop-blur-lg px-3 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-widest">
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/20 backdrop-blur-xl px-4 py-1.5 rounded-full text-[9px] font-black text-white uppercase tracking-[0.2em] border border-white/10">
             {current + 1} / {images.length}
           </div>
         )}
@@ -65,15 +66,15 @@ export default function Carousel({ images }: { images: string[] }) {
 
       {/* THUMBNAIL STRIP */}
       {images.length > 1 && (
-        <div className="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
+        <div className="flex gap-3 overflow-x-auto py-2 no-scrollbar px-1">
           {images.map((img, index) => (
             <button
               key={index}
               onClick={() => setCurrent(index)}
-              className={`relative shrink-0 w-20 h-20 rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${
+              className={`relative shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-2xl overflow-hidden border-2 transition-all duration-300 ${
                 current === index
-                  ? "border-[#08228d] ring-2 ring-[#08228d]/10"
-                  : "border-transparent opacity-60 hover:opacity-100"
+                  ? "border-[#08228d] ring-4 ring-[#08228d]/10"
+                  : "border-transparent opacity-40 hover:opacity-100"
               }`}
             >
               <Image
