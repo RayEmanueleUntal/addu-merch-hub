@@ -30,45 +30,56 @@ export default function Header() {
       <header
         className={`
         fixed top-0 left-0 z-50 w-full 
-        bg-white/30 backdrop-blur-md
+        bg-white/50 backdrop-blur-md
         border-b border-gray-200/50
         transition-[height] duration-500 ease-in-out
         ${isSearchOpen ? "h-auto" : "h-16"}
       `}
       >
-        <div className="relative mx-auto w-300 px-30 py-3">
+        <div className="relative mx-auto w-full max-w-300 px-4 md:px-10 py-3">
           {/* TOP ROW */}
           <div className="flex items-center">
             {/* LEFT */}
-            <div className="flex items-center gap-10">
-              <Link href="/" className="text-xl font-bold text-[#08228d]">
+            <div className="flex items-center gap-4 md:gap-10">
+              <Link href="/" className="shrink-0">
                 {/* ADDU MERCH HUB */}
                 <Image
                   src={"/images/assets/logov2.svg"}
                   alt="Logo"
-                  width={90}
-                  height={90}
+                  width={70}
+                  height={70}
+                  className="w-14 md:w-[90px]"
                 ></Image>
               </Link>
 
-              <Link
-                href="/org"
-                className="text-gray-700 hover:text-[#08228d] font-medium"
-              >
-                ORGANIZATIONS
-              </Link>
+              <nav className="hidden sm:flex items-center gap-6">
+                <Link
+                  href="/org"
+                  className="text-xs md:text-sm text-gray-700 hover:text-[#08228d] font-medium uppercase tracking-wider"
+                >
+                  ORGANIZATIONS
+                </Link>
+              </nav>
             </div>
 
             {/* RIGHT */}
-            <div className="ml-auto flex items-center gap-4">
+            {/* Added ml-auto to push this entire group to the right side */}
+            <div className="ml-auto flex items-center gap-4 md:gap-4">
               <SearchWrapper
                 isOpen={isSearchOpen}
                 onToggle={() => setIsSearchOpen((v) => !v)}
               />
 
               <Link
+                href="/org"
+                className="sm:hidden text-xs text-gray-700 font-medium"
+              >
+                Orgs
+              </Link>
+
+              <Link
                 href="/about"
-                className="text-gray-700 hover:text-[#08228d] font-medium"
+                className="text-xs md:text-sm text-gray-700 hover:text-[#08228d] font-medium"
               >
                 About
               </Link>
@@ -77,9 +88,8 @@ export default function Header() {
 
           {/* SEARCH AREA */}
           <div
-            className={`
-               transition-all duration-500 ease-in-out
-            ${isSearchOpen ? " max-h-200 opacity-100 mt-4" : "max-h-0 opacity-0"}
+            className={`overflow-hidden transition-all duration-500 ease-in-out
+            ${isSearchOpen ? " max-h-[500px] opacity-100 mt-4 pb-4" : "max-h-0 opacity-0"}
           `}
           >
             <SearchBox

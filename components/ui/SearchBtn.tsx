@@ -14,7 +14,11 @@ export default function SearchBtn({ isOpen, onToggle }: SearchBtnProps) {
       className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer"
       aria-label="Toggle Search"
     >
-      {isOpen ? <X size={20} /> : <Search size={20} />}
+      {isOpen ? (
+        <X size={20} className="text-gray-700" />
+      ) : (
+        <Search size={20} className="text-gray-700 hover:text-[#08228d]" />
+      )}
     </button>
   );
 }

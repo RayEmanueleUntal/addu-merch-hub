@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { searchProducts } from "@/lib/search";
 import { Product } from "@/types/product";
 import { Search } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 interface SearchBoxProps {
@@ -51,40 +52,50 @@ export default function SearchBar({ isOpen, onToggle }: SearchBoxProps) {
   }
 
   return (
-    <>
-      <form onSubmit={onSubmit} className="flex gap-2">
-        <div className="flex w-full">
-          <Search></Search>
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search merch..."
-            className="w-full ml-5 focus:outline-none"
-          ></input>
-        </div>
+    <div className="w-full">
+      <form
+        onSubmit={onSubmit}
+        className="flex items-center rounded-xl px-4 py-2"
+      >
+        <Search size={18} className="text-shadow-gray-700"></Search>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search merch..."
+          className="w-full ml-3 bg-transparent focus:outline-none text-base py-1 text-shadow-gray-700"
+        ></input>
       </form>
 
-      <div>
-        {results && (
-          <ul className="mt-2 pt-2">
-            {results.map((product) => (
-              <li
+      {results.length > 0 && (
+        <ul className="mt-4 overflow-hidden max-h-[60vh] overflow-y-auto">
+          {results.map((product) => (
+            <li key={product.id} className="">
+              <Link
+                href={`/product/${product.slug}`}
                 key={product.id}
-                className="py-1 hover:bg-gray-500/10 cursor-pointer"
+                className="flex items-center p-4 hover:bg-gray-50/5 active:bg-gray-50/20 transition-colors"
               >
-                <Link
-                  href={`/product/${product.slug}`}
-                  key={product.id}
-                  className=""
-                >
+                <div className="w-10 h-10 relative rounded-md overflow-hidden bg-gray-100 mr-3">
+                  <Image
+                    src={
+                      product.featured && product.images.length > 1
+                        ? product.images[1]
+                        : product.images[0]
+                    }
+                    alt=""
+                    fill
+                    className="object-cover"
+                  ></Image>
+                </div>
+                <span className="text-sm font-medium text-gray-800">
                   {product.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
